@@ -1,0 +1,55 @@
+{
+  "R": {
+    "Version": "4.3.1",
+    "Repositories": [
+      {
+        "Name": "CRAN",
+        "URL": "https://packagemanager.posit.co/cran/latest"
+      }
+    ]
+  },
+  "Packages": {
+    "dplyr": {
+      "Package": "dplyr",
+      "Version": "1.1.4",
+      "Source": "Repository"
+    },
+    "purrr": {
+      "Package": "purrr",
+      "Version": "1.0.2",
+      "Source": "Repository"
+    },
+    "renv": {
+      "Package": "renv",
+      "Version": "1.0.1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Requirements": [
+        "utils"
+      ],
+      "Hash": "6523639dd021b32c3199a41cbe6db340"
+    },
+    "vusa": {
+      "Package": "vusa",
+      "Version": "0.0.0.9000",
+      "Source": "GitHub",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteUsername": "vusaverse",
+      "RemoteRepo": "vusa",
+      "RemoteRef": "main",
+      "RemoteSha": "1dc09fb45be28368ac5efd1c0a26c838b5515840"
+    },
+    "vvmover": {
+      "Package": "vvmover",
+      "Version": "1.6.0",
+      "Source": "GitHub",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteUsername": "vusaverse",
+      "RemoteRepo": "vvmover",
+      "RemoteRef": "master",
+      "RemoteSha": "03b849d0f12e49cd746a7f87812ea735feccdb2c"
+    }
+  }
+}
