@@ -29,6 +29,11 @@
       ],
       "Hash": "6523639dd021b32c3199a41cbe6db340"
     },
+    "usethis": {
+      "Package": "usethis",
+      "Version": "2.2.3",
+      "Source": "Repository"
+    },
     "vusa": {
       "Package": "vusa",
       "Version": "0.0.0.9000",
