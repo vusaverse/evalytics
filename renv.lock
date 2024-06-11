@@ -29,6 +29,11 @@
       ],
       "Hash": "6523639dd021b32c3199a41cbe6db340"
     },
+    "tidylog": {
+      "Package": "tidylog",
+      "Version": "1.1.0",
+      "Source": "Repository"
+    },
     "usethis": {
       "Package": "usethis",
       "Version": "2.2.3",

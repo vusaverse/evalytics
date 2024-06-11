@@ -10,6 +10,7 @@ library(dplyr)
 library(purrr)
 library(vvmover)
 library(vusa)
+library(tidylog)
 
 set_all_envs <- function(var.name, var.value) {
   args = list(var.value)
