@@ -16,7 +16,6 @@ sMostrecent_zip <- vvmover::get_recent_file_date_modified(sDir, ".zip")
 dfsubjectGrade <- readr::read_delim(unz(sMostrecent_zip, "subjectGrade.csv"))
 dfsubjectGradePeriod <- readr::read_delim(unz(sMostrecent_zip, "subjectGradePeriod.csv"))
 
-##' *INFO*: Both dataframes are empty, so we will not join them.
 dfSubjectGradeJoined <- dfsubjectGrade %>%
   left_join(dfsubjectGradePeriod, by = c("id" = "subjectGradeId"))
 
