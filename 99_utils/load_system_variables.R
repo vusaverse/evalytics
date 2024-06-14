@@ -5,31 +5,26 @@
 ##
 ##
 ## ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-renv::restore()
-library(dplyr)
-library(purrr)
-library(vvmover)
-library(vusa)
-library(tidylog)
 
+## Function to set all environment variables
 set_all_envs <- function(var.name, var.value) {
   args = list(var.value)
   names(args) = var.name
   do.call(Sys.setenv, args)
 }
 
-## Lees in systeemvariabelen excel bestand
-##' *INFO*: Dit is momenteel enkel beschikbaar op "main", vandaar volledig bestandspad
+##' *INFO*: The RENVIRON_PATH is set in the .Renviron file
+##' TO add it there run the following code:
+##' usethis::edit_r_environ()
+##' and add the following line:
+##' RENVIRON_PATH = "path/to/your/file.xlsx"
 to_set <- readxl::read_xlsx(Sys.getenv("RENVIRON_PATH"))
 
-## zet variabelen in R system variables
-pmap(list(to_set$variable, to_set$value), set_all_envs)
-
-## Set SHAREPOINT_DIR
-Sys.setenv(SHAREPOINt_DIR = paste0("C:/Users/", Sys.getenv("USERNAME"), "/Vrije Universiteit Amsterdam/"))
+## Set systemvariables inR
+purrr::pmap(list(to_set$variable, to_set$value), set_all_envs)
 
 ## +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-## RUIM OP ####
+## CLEAR ####
 ## +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 clear_script_objects()

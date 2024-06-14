@@ -29,6 +29,11 @@
       ],
       "Hash": "6523639dd021b32c3199a41cbe6db340"
     },
+    "styler": {
+      "Package": "styler",
+      "Version": "1.10.3",
+      "Source": "Repository"
+    },
     "tidylog": {
       "Package": "tidylog",
       "Version": "1.1.0",
@@ -48,7 +53,7 @@
       "RemoteUsername": "vusaverse",
       "RemoteRepo": "vusa",
       "RemoteRef": "main",
-      "RemoteSha": "1dc09fb45be28368ac5efd1c0a26c838b5515840"
+      "RemoteSha": "fd4ddfc23328da5430854819f9d9ddabf7f2652b"
     },
     "vvmover": {
       "Package": "vvmover",
