@@ -18,15 +18,11 @@ dfSubject <- readr::read_delim(unz(sMostrecent_zip, "subject.csv"))
 dfTeacher <- readr::read_delim(unz(sMostrecent_zip, "teacher.csv"))
 dfGenericTopic <- readr::read_delim(unz(sMostrecent_zip, "genericTopic.csv"))
 
-## Join the two data frames
-dfOrganisation1 <- dfSubject %>%
-  left_join(dfOrganisation, by = c("organisationId" = "id"))
-
-dfOrganisation2 <- dfTeacher %>%
-  left_join(dfOrganisation, by = c("organisationId" = "id"))
-
-dfOrganisation3 <- dfGenericTopic %>%
-  left_join(dfOrganisation, by = c("organisationId" = "id"))
+## Join the four data frames
+dfOrganisationJoined <- dfOrganisation %>%
+  left_join(dfSubject, by = c("id" = "organisationId")) %>%
+  left_join(dfTeacher, by = c("id" = "organisationId")) %>%
+  left_join(dfGenericTopic, by = c("id" = "organisationId"))
 
 ## +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ## WRITE & CLEAR ####
