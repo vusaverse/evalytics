@@ -33,7 +33,7 @@ dfAnswerSetTextResult_joined <- dfAnswerSetTextResult %>%
   left_join(dfEvaluationBlock, by = c("evaluationBlockId" = "id"), suffix = c(".answer_set", ".evaluation_block")) %>%
   left_join(dfEvaluationBlockQuestion, by = c("evaluationBlockQuestionId" = "id"), suffix = c(".answer_set", ".evaluation_block_question")) %>%
   left_join(dfEvaluationCode, by = c("evaluationCodeId" = "id"), suffix = c(".answer_set", ".evaluation_code")) %>%
-  left_join(dfQuestions, by = c("questionHash" = "uniquenessHash"), suffix = c(".answer_set", ".question"))
+  left_join(dfQuestions, by = c("questionHash" = "hash"), suffix = c(".answer_set", ".question"))
 
 
 dfAnswerSetResult_joined <- dfAnswerSetResult %>%
@@ -41,7 +41,7 @@ dfAnswerSetResult_joined <- dfAnswerSetResult %>%
   left_join(dfEvaluationBlock, by = c("evaluationBlockId" = "id"), suffix = c(".answer_set", ".evaluation_block")) %>%
   left_join(dfEvaluationBlockQuestion, by = c("evaluationBlockQuestionId" = "id"), suffix = c(".answer_set", ".evaluation_block_question")) %>%
   left_join(dfEvaluationCode, by = c("evaluationCodeId" = "id"), suffix = c(".answer_set", ".evaluation_code")) %>%
-  left_join(dfQuestions, by = c("questionHash" = "uniquenessHash"), suffix = c(".answer_set", ".question"))
+  left_join(dfQuestions, by = c("questionHash" = "hash"), suffix = c(".answer_set", ".question"))
 
 
 ## +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
