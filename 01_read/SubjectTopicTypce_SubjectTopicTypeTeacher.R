@@ -29,4 +29,6 @@ dfsubjectTopicTypeJoined <- dfsubjectTopicType %>%
 ## WRITE & CLEAR ####
 ## +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+write_file_proj(dfsubjectTopicTypeJoined, "SubjectTopicTypce_SubjectTopicTypeTeacher")
+
 clear_script_objects()

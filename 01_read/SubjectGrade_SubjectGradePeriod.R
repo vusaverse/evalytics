@@ -24,4 +24,6 @@ dfSubjectGradeJoined <- dfsubjectGrade %>%
 ## WRITE & CLEAR ####
 ## +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+write_file_proj(dfSubjectGradeJoined, "SubjectGradeJoined")
+
 clear_script_objects()
