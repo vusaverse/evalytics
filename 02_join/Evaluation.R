@@ -18,12 +18,15 @@ sMostrecent_zip <- vvmover::get_recent_file_date_modified(sDir, ".zip")
 dfEvaluation <- readr::read_delim(unz(sMostrecent_zip, "evaluation.csv"))
 dfEvaluationCode <- readr::read_delim(unz(sMostrecent_zip, "evaluationCode.csv"))
 
-dfTopicTypeJoined <- dfTopicType %>%
-  left_join(dfSubject, by = c("id" = "topicTypeId"), suffix = c(".topic", ".subject")) %>%
-  left_join(dfEvaluationBlock, by = c("id" = "topicTypeId"), suffix = c(".topic", ".evaluation"))
+## Join the two data frames
+dfEvaluation_Joined <- dfEvaluation %>%
+  ##' *INFO*: It appears that evaluationId can have more than one evaluationLabelIdName.
+  left_join(dfEvaluationLabelled, by = c("id" = "evaluationId"), suffix = c(".evaluation", ".label")) %>%
+  ##' *INFO*: It appears multiple codes are available, which causes one-to-many relationship.
+  left_join(dfEvaluationCode, by = c("id" = "evaluationId"), suffix = c(".evaluation", ".code"))
 
 ## +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ## WRITE & CLEAR ####
 ## +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-#clear_script_objects()
+clear_script_objects()
