@@ -24,4 +24,6 @@ dfQuestion <- dfQuestionScaleValue %>%
 ## WRITE & CLEAR ####
 ## +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+write_file_proj(dfQuestion, "Question_scale")
+
 clear_script_objects()

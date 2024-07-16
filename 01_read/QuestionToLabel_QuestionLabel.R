@@ -24,4 +24,6 @@ dfQuestionLabelled <- dfQuestionToLabel %>%
 ## WRITE & CLEAR ####
 ## +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+write_file_proj(dfQuestionLabelled, "QuestionLabelled")
+
 clear_script_objects()
