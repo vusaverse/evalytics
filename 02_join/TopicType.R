@@ -29,6 +29,10 @@ dfTopicTypeJoined <- dfTopicType %>%
 dfTopicTypeFiltered <- dfTopicTypeJoined %>%
   filter(!is.na(name) & !is.na(description))
 
+## Remove empty columns
+dfTopicTypeFiltered <- dfTopicTypeFiltered %>%
+  select(-'id.generic', -'genericTopicId', -'index.generic', -'parentTopicTypeId')
+
 ## +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ## WRITE & CLEAR ####
 ## +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
