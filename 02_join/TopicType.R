@@ -19,18 +19,19 @@ dfEvaluationBlock <- readr::read_delim(unz(sMostrecent_zip, "evaluationBlock.csv
 dfGenericTopic <- readr::read_delim(unz(sMostrecent_zip, "genericTopicTopicType.csv"))
 
 ## Join the dataframes
-
-## !!! df is very big about 162 million objects. There must be a better way to organize this...
-## Or maybe these csv's are not to be joined..
-
 dfTopicTypeJoined <- dfTopicType %>%
   left_join(dfSubject, by = c("id" = "topicTypeId"), suffix = c(".topic", ".subject")) %>%
   left_join(dfGenericTopic, by = c("id" = "topicTypeId"), suffix = c(".topic", ".generic")) %>%
   left_join(dfEvaluationBlock, by = c("id" = "topicTypeId"), suffix = c(".topic", ".evaluation"))
 
+## PROBLEM: df is very big about 162 million objects. There must be a better way to organize this...
+## (edit) SOLUTION: Filter out rows that have NA in 'name' and/or 'description'
+dfTopicTypeFiltered <- dfTopicTypeJoined %>%
+  filter(!is.na(name) & !is.na(description))
+
 ## +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 ## WRITE & CLEAR ####
 ## +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-clear_script_objects()
+#clear_script_objects()
 
