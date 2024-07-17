@@ -5,7 +5,7 @@
 ## Contact:
 ##
 ##' *INFO*:
-## 1) Join the evaluation, avaluationCode, and evaluation labelled data frames.
+## 1) Join the evaluation, evaluationCode, and evaluation labelled data frames.
 ## 2) TODO: evaluationBlock needs to be created and joined
 ##
 ## ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
