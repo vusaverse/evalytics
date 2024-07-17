@@ -1,9 +1,9 @@
 
 
-Sys.setenv("read_and_write_config" = "20_test/read_and_write_settings.csv")
+Sys.setenv("read_and_write_config" = "99_utils/read_and_write_settings.csv")
 
-Sys.setenv("CONFIG_READ" = "20_test/read_settings.csv")
-Sys.setenv("CONFIG_WRITE" = "20_test/write_settings.csv")
+Sys.setenv("CONFIG_READ" = "99_utils/read_settings.csv")
+Sys.setenv("CONFIG_WRITE" = "99_utils/write_settings.csv")
 
 
 read_config_proj <- function(env_var = "CONFIG_READ", find_loc_in_env = TRUE) {

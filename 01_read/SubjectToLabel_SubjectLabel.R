@@ -24,4 +24,6 @@ dfSubjectLabelled <- dfSubjectToLabel %>%
 ## WRITE & CLEAR ####
 ## +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+write_file_proj(dfSubjectLabelled, "SubjectLabelled")
+
 clear_script_objects()

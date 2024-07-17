@@ -24,4 +24,6 @@ dfEvaluationLabelled <- dfEvaluationToLabel %>%
 ## WRITE & CLEAR ####
 ## +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+write_file_proj(dfEvaluationLabelled, "EvaluationLabelled")
+
 clear_script_objects()
